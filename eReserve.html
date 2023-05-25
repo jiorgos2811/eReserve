@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home Page</title>
+  <style>
+    body {
+      background-color: #F7F7F7;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .sidebar {
+      width: 658px;
+      height: 100vh;
+      background-image: url('media/homeimage.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: fixed;
+      right: 0px;
+      opacity: 0.8;
+      display: block; 
+      text-align: right;
+    }
+
+    .sidebar img {
+      width: 8%;
+      height: auto;
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: 10px;
+    }
+    
+    .main-content {
+      flex-grow: 1;
+    }
+    
+    .logo {
+      width: 300px;
+      height: 100px;
+      background: url('media/logo.png'); 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 53px;
+      position: fixed;
+      right: 62%;
+      top:30%;
+    }
+    
+    .search-bar {
+      position: absolute;
+      width: 409px;
+      height: 64px;
+
+      background: #FFD64D;
+      border-radius: 145px;
+      display: flex;        
+      justify-content: center;  
+      align-items: center;    
+      position: fixed;
+      right: 58%;
+      top:50%;
+    }
+
+    .search-bar input {
+      width: 90%;  /* Adjust as needed */
+      height: 50%;  /* Adjust as needed */
+      border: none;
+      background: transparent;
+      text-align: center;
+    }
+
+    .search-bar input::placeholder {
+      color: #000000; /* or any color you prefer */
+      opacity: 1; /* or any opacity value you prefer */
+    }
+    
+    .user-info {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      position: fixed;
+      right: 660px;
+    }
+    
+    .user-info img {
+      width: 50px;
+      height: 50px;
+      margin-left: 20px;
+    }
+    
+    .slogan {
+      /* Απόλαυσε κάθε στιγμή, κάνε κράτηση με το eReserve τώρα! */
+      position: fixed;
+      right: 55%;
+      top:70%;
+      width: 563px;
+      height: 113px;
+
+      font-family: 'Inder';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 36px;
+      line-height: 45px;
+      text-align: center;
+
+      color: #000000;
+
+    }
+
+    .button {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 25px;
+      line-height: 30px;
+      text-align: center;
+      text-decoration-line: underline;
+      color: #000000;
+    }
+
+    .bottom-text {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; /* for vertical alignment */
+      position: fixed;
+      right: 0;
+      left: 0;
+      bottom: 0; /* adjust as needed */
+      padding: 0 20px; /* adjust as needed */
+      height: 36px;
+      font-size: 25px;
+      line-height: 30px;
+      color: #000000;
+    }
+
+    .hamburger-menu {
+      position: absolute;
+      width: 40px;
+      height: 41px;
+      left: 29px;
+      top: 25px;
+    }
+    
+    .hamburger-menu img {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <a href="https://www.instagram.com"><img src="media/instagram.png" alt="Instagram Icon"></a>
+    <a href="https://www.linkedin.com"><img src="media/linkedin.png" alt="LinkedIn Icon"></a>
+    <a href="https://twitter.com"><img src="media/twitter.png" alt="Twitter Icon"></a>
+  </div>
+  <div class="main-content">
+    <div class="hamburger-menu">
+      <img src="media/hamburger.png" alt="Hamburger Menu Icon"> 
+    </div>
+    <div class="user-info">
+      <img src="media/profile.png" alt="Profile Picture Icon">
+      <a href="sites/Login.html"><span>Σύνδεση/Εγγραφή</span></a>
+    </div>
+    <div class="logo"></div>
+    <div class="search-bar">
+      <input type="text" placeholder="Αναζήτηση Τοποθεσίας">
+    </div>
+    <div class="slogan">
+      <span>Απόλαυσε κάθε στιγμή, κάνε κράτηση με το eReserve τώρα!</span>
+    </div>
+    <div class="bottom-text">
+      <div class="text button">
+        <a href="sites/AboutUs.html"><span>Ποιοί είμαστε</span></a>
+      </div>
+      <div class="text button">
+        <a href="sites/CustomerService.html"><span>Εξυπηρέτηση Πελατών</span></a>
+      </div>
+      <div class="text button">
+        <a href="sites/BecomeMember.html"><span>Γίνε μέρος της ομάδας μας!</span></a>
+      </div>
+    </div>       
+  </div>
+</body>
+</html>
