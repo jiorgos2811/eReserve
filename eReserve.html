@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Home Page</title>
+  <link rel="stylesheet" type="text/css" href="css/dropdown.css">
   <style>
     body {
       background-color: #F7F7F7;
@@ -40,43 +41,15 @@
       width: 300px;
       height: 100px;
       background: url('media/logo.png'); 
-      background-size: cover;
+      background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
       border-radius: 53px;
       position: fixed;
-      right: 62%;
+      right: 53%;
       top:30%;
     }
-    
-    .search-bar {
-      position: absolute;
-      width: 409px;
-      height: 64px;
-
-      background: #FFD64D;
-      border-radius: 145px;
-      display: flex;        
-      justify-content: center;  
-      align-items: center;    
-      position: fixed;
-      right: 58%;
-      top:50%;
-    }
-
-    .search-bar input {
-      width: 90%;  
-      height: 50%;  
-      border: none;
-      background: transparent;
-      text-align: center;
-    }
-
-    .search-bar input::placeholder {
-      color: #000000; 
-      opacity: 1; 
-    }
-    
+     
     .user-info {
       display: flex;
       align-items: center;
@@ -84,17 +57,68 @@
       position: fixed;
       right: 660px;
     }
-    
-    .user-info img {
-      width: 50px;
-      height: 50px;
-      margin-left: 20px;
+
+    /* The side navigation menu */
+    .filterbar {
+      margin: 0;
+      padding: 0;
+      width: 200px;
+      background-color: #f1f1f1;
+      position: fixed;
+      height: 100%;
+      overflow: auto;
+    }
+
+    /* Sidebar links */
+    .filterbar a {
+      display: block;
+      color: black;
+      padding: 16px;
+      text-decoration: none;
+    }
+
+    /* Active/current link */
+    .filterbar a.active {
+      background-color: #FFD64D;
+      color: white;
+    }
+
+    /* Links on mouse-over */
+    .filterbar a:hover:not(.active) {
+      background-color: #555;
+      color: white;
+    }
+
+    /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+    div.content {
+      margin-left: 200px;
+      padding: 1px 16px;
+      height: 1000px;
+    }
+
+    /* On screens that are less than 700px wide, make the sidebar into a topbar */
+    @media screen and (max-width: 700px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+      .filterbar a {float: left;}
+      div.content {margin-left: 0;}
+    }
+
+    /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+    @media screen and (max-width: 400px) {
+      .filterbar a {
+        text-align: center;
+        float: none;
+      }
     }
     
     .slogan {
       
       position: fixed;
-      right: 55%;
+      right: 47%;
       top:70%;
       width: 563px;
       height: 113px;
@@ -110,44 +134,7 @@
 
     }
 
-    .button {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 25px;
-      line-height: 30px;
-      text-align: center;
-      text-decoration-line: underline;
-      color: #000000;
-    }
 
-    .bottom-text {
-      display: flex;
-      justify-content: space-between;
-      align-items: center; 
-      position: fixed;
-      right: 0;
-      left: 0;
-      bottom: 0; 
-      padding: 0 20px; 
-      height: 36px;
-      font-size: 25px;
-      line-height: 30px;
-      color: #000000;
-    }
-
-    .hamburger-menu {
-      position: absolute;
-      width: 40px;
-      height: 41px;
-      left: 29px;
-      top: 25px;
-    }
-    
-    .hamburger-menu img {
-      width: 100%;
-      height: 100%;
-    }
   </style>
 </head>
 <body>
@@ -156,32 +143,34 @@
     <a href="https://www.linkedin.com"><img src="media/linkedin.png" alt="LinkedIn Icon"></a>
     <a href="https://twitter.com"><img src="media/twitter.png" alt="Twitter Icon"></a>
   </div>
+
+  <div class="filterbar">
+    <a class="active" href="eReserve.html">Home</a>
+    <a href="sites/AboutUs.html">Ποιοί είμαστε</a>
+    <a href="sites/CustomerService.html">Εξυπηρέτηση Πελατών</a>
+    <a href="sites/BecomeMember.html">Γίνε μέρος της ομάδας μας</a>
+  </div>
+
   <div class="main-content">
-    <div class="hamburger-menu">
-      <img src="media/hamburger.png" alt="Hamburger Menu Icon"> 
-    </div>
     <div class="user-info">
-      <img src="media/profile.png" alt="Profile Picture Icon">
       <a href="sites/Login.html"><span>Σύνδεση/Εγγραφή</span></a>
     </div>
+
     <div class="logo"></div>
-    <div class="search-bar">
-      <input type="text" placeholder="Αναζήτηση Τοποθεσίας">
-    </div>
+
     <div class="slogan">
       <span>Απόλαυσε κάθε στιγμή, κάνε κράτηση με το eReserve τώρα!</span>
+    </div>    
+    
+    <div class="dropdown" style="width: 409px; height: 64px;">
+      <button class="dropbtn" style="width: 100%; height: 100%;">Dropdown</button>
+      <div class="dropdown-content">
+        <a href="#">Κυψέλη</a>
+        <a href="#">Εξάρχεια</a>
+        <a href="#">Αμπελόκηποι</a>
+      </div>
+
     </div>
-    <div class="bottom-text">
-      <div class="text button">
-        <a href="sites/AboutUs.html"><span>Ποιοί είμαστε</span></a>
-      </div>
-      <div class="text button">
-        <a href="sites/CustomerService.html"><span>Εξυπηρέτηση Πελατών</span></a>
-      </div>
-      <div class="text button">
-        <a href="sites/BecomeMember.html"><span>Γίνε μέρος της ομάδας μας!</span></a>
-      </div>
-    </div>       
   </div>
 </body>
 </html>
